@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import './Park.css';
+import Modal from '../Modal/Modal.js';
+
 import GoogleMapsLoader from 'google-maps';
 GoogleMapsLoader.KEY = "AIzaSyBjfQXkFa45WKSDS8lwZbWg2--2Zh2oNVU"
 
@@ -30,17 +32,18 @@ class Park extends Component{
 					const parksArr = [];
 					const image = { 
 						url: './images/Tennis.png',
-						
-					}
+							}
+					// const momo = this.props.isModalOpen;
+
 					const parkPlay = this.props.parks.map((park, i)=>{
-						console.log(park.facility_n, 'data')
+						// console.log(park.facility_n, 'data')
 						if(park.facility_n === "TENNIS COURT"){
 							// console.log(parksObj[park.park])
 							const parkObj = {};
 
 							// parksObj[park.park].facility_n === "TENNIS COURT" = true;
 							parksArr.push[parkObj]
-							console.log(parksArr)
+							// console.log(parksArr)
 							const y = parseFloat(park.y_coord);
 							const x = parseFloat(park.x_coord);
 
@@ -50,47 +53,24 @@ class Park extends Component{
 								position: {lat:y, lng: x},
 								map: map,
 								animation: google.maps.Animation.DROP,
-								icon: image
+								icon: image,
+								 
 
 							})
+
 							const allInfo = this.props.parks
 							const infoWindow = new google.maps.InfoWindow({
-								content: park.facility_n
+								enableEventPropagation: true
 							})
 							marker.addListener('click', ()=>{
+								
 								infoWindow.open(map, marker)
 								
 									
-								
 							})
 						}
-						
-							// const y = parseFloat(park.y_coord);
-							// const x = parseFloat(park.x_coord);
-							// console.log(y, 'y_coord')
-							// console.log(x, 'x_coord')
-					 
-
-							
-		
-
-						// console.log(this, 'this')
-						// console.log(y)
-						// const marker = new google.maps.Marker({
-						// 	position: {lat:y, lng: x},
-						// 	map: map
-
-						// })
-						
-						// console.log(map, 'this is map')
-						// return 
-
-
 					})
-					
-				
-			// })
-		});
+				});
 	}
 
 
@@ -108,6 +88,7 @@ class Park extends Component{
 		return(
 			<div id="map-canvas" ref="Map" className="App">
 
+				
 
 			</div>
 			)
