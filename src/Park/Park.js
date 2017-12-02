@@ -75,7 +75,7 @@ class Park extends Component{
    
   someFunc =(i, park) => {
     console.log(park)
-    ReactDOM.render(<InfoWindow />, document.getElementById('map-form-' + i))
+    ReactDOM.render(<InfoWindow parks={this.props.parks}/>, document.getElementById('map-form-' + i))
 
 
 
@@ -94,11 +94,12 @@ class Park extends Component{
 		
 
 		return(
-			
+			<div>
 				<div id="map-canvas" ref="Map" className="App">
 
 				</div>
 				
+			</div>
 			)
 	}
 }

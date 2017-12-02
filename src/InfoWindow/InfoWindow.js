@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import ReactDOM from 'react-dom';
 class InfoWindow extends Component {
 	constructor(props){
 		super(props)
@@ -11,18 +11,31 @@ class InfoWindow extends Component {
 	 window = (e) =>{
       const state = this.state;
       state.isWindowOpen = true;
+      
       this.setState(state);
     }
+	
+		
 	
     
 
 	render(){
+		
+		const infoPark = this.props.parks.map((park, i)=>{
+		 
+
+		console.log(i)
+		
+	});
+		
+
+		
 
 
 		return(
 			<div>
 				<button onClick={this.window}>Set The Game UP!</button>
-				<h1>hey there</h1>
+				
 			</div>
 			)
 	}
