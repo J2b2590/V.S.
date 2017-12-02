@@ -1,28 +1,31 @@
 import React, {Component} from 'react';
 
-class Modal extends Component {
+class InfoWindow extends Component {
 	constructor(props){
 		super(props)
 		this.state = {
-			isModalOpen: false
+			isWindowOpen: false
 		}
 	}
 
-	 modal = (e) =>{
+	 window = (e) =>{
       const state = this.state;
-      state.isModalOpen = true;
+      state.isWindowOpen = true;
       this.setState(state);
     }
-
+	
     
 
 	render(){
+
+
 		return(
 			<div>
-				<button onClick={this.state.isModalOpen}>Set The Game UP!</button>
+				<button onClick={this.window}>Set The Game UP!</button>
+				<h1>hey there</h1>
 			</div>
 			)
 	}
 }
 
-export default Modal;
+export default InfoWindow;

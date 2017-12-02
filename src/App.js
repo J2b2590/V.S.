@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import Login from './Login/Login.js';
-// import Profile from './Profile/Profile.js';
 import Park from './Park/Park.js';
+import InfoWindow from './InfoWindow/InfoWindow.js';
 
 class App extends Component {
 
@@ -12,7 +12,8 @@ class App extends Component {
       this.state = {
         username: '',
         isLoggedIn: false,
-        parks: []
+        parks: [],
+        modal: false
       }
     }
 
@@ -30,7 +31,12 @@ class App extends Component {
 
       })
     }
-      
+    
+     modal = (e) =>{
+      const state = this.state;
+      state.modal = true;
+      this.setState(state);
+    }
 
 
     login = (e) =>{
@@ -46,8 +52,8 @@ class App extends Component {
   render() {
     return (
   <div>
-      {this.state.isLoggedIn ? <Park parks={this.state.parks}/> : <Login login={this.login}/>}
-
+      {this.state.isLoggedIn ? <Park parks={this.state.parks}/>  : <Login login={this.login}/>}
+      
   </div>
     );
   }

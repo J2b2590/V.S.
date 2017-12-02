@@ -1,20 +1,23 @@
 import React, {Component} from 'react';
 import './Park.css';
-import Modal from '../Modal/Modal.js';
-
+import InfoWindow from '../InfoWindow/InfoWindow.js';
+import ReactDOM from 'react-dom';
 import GoogleMapsLoader from 'google-maps';
+
 GoogleMapsLoader.KEY = "AIzaSyBjfQXkFa45WKSDS8lwZbWg2--2Zh2oNVU"
 
 
 
 class Park extends Component{
+	
 
-
+	 
 
 	
 
 
 	componentDidMount(){
+		console.log(this);
 		GoogleMapsLoader.load((google)=>{
 			const mapCanvas = this.refs.Map;
 
@@ -33,8 +36,6 @@ class Park extends Component{
 					const image = { 
 						url: './images/Tennis.png',
 							}
-					// const momo = this.props.isModalOpen;
-
 					const parkPlay = this.props.parks.map((park, i)=>{
 						// console.log(park.facility_n, 'data')
 						if(park.facility_n === "TENNIS COURT"){
@@ -46,7 +47,7 @@ class Park extends Component{
 							// console.log(parksArr)
 							const y = parseFloat(park.y_coord);
 							const x = parseFloat(park.x_coord);
-
+							
 							
 							
 							const marker = new google.maps.Marker({
@@ -57,21 +58,28 @@ class Park extends Component{
 								 
 
 							})
-
 							const allInfo = this.props.parks
 							const infoWindow = new google.maps.InfoWindow({
-								enableEventPropagation: true
+								content: "<div id='map-form-" + i+ "'>"
 							})
 							marker.addListener('click', ()=>{
-								
+
 								infoWindow.open(map, marker)
-								
-									
+
+							    this.someFunc(i, park)
 							})
 						}
 					})
 				});
-	}
+			}
+   
+  someFunc =(i, park) => {
+    console.log(park)
+    ReactDOM.render(<InfoWindow />, document.getElementById('map-form-' + i))
+
+
+
+  }
 
 
 	
@@ -86,11 +94,11 @@ class Park extends Component{
 		
 
 		return(
-			<div id="map-canvas" ref="Map" className="App">
+			
+				<div id="map-canvas" ref="Map" className="App">
 
+				</div>
 				
-
-			</div>
 			)
 	}
 }
