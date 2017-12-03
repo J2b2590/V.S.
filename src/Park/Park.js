@@ -37,6 +37,9 @@ class Park extends Component{
 						url: './images/Tennis.png',
 							}
 
+
+					
+
 					const parkPlay = this.props.parks.map((park, i)=>{
 						// console.log(park.facility_n, 'data')
 						if(park.facility_n === "TENNIS COURT"){
@@ -59,11 +62,37 @@ class Park extends Component{
 							 
 
 							})
+
 							// console.log(park.park)	
 							// const allInfo = this.props.parks
 							const infoWindow = new google.maps.InfoWindow({
-								content: "<p>" + 'Location:' + park.park + '</br>'+ "</br>" + 'This court is:' + park.facility_t + "</p>" + "<div id='map-form-" + i+ "'>" 
+								content: '<div id="iw-container">' +
+                    			'<div class="iw-title">'+ park.park +'</div>' +
+                    			'<div class="iw-content">' +
+                      			'<div class="iw-subTitle">BLAHALA</div>' +
+                      		'<img src="http://www.atpworldtour.com/-/media/images/news/2017/04/01/00/56/federer-miami-2017-friday-sf-2.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
+                      				 +
+                      			'<div class="iw-subTitle">Contacts</div>' +
+                     			'<p>Jeff<br><br>'+
+                     			'<br>Phone. +867-5309<br>e-mail: @gmail<br>WWW.VS.Com</p>'+
+                   				'</div>' +
+                   				'<div class="iw-bottom-gradient"></div>' +
+                  				'</div>' + "<div id='map-form-" + i+ "'>"
 							})
+							
+
+
+							
+
+    	
+    						
+
+    
+							
+
+							
+    
+
 							marker.addListener('click', ()=>{
 
 								infoWindow.open(map, marker)
@@ -73,10 +102,12 @@ class Park extends Component{
 						}
 					})
 				});
+
 			}
    
   someFunc =(i, park) => {
     console.log(park)
+
 
     ReactDOM.render(<InfoWindow parks={this.props.parks}/>, document.getElementById('map-form-' + i))
 

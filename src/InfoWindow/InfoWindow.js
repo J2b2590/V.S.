@@ -21,7 +21,6 @@ class InfoWindow extends Component {
 
 	render(){
 		
-
 		console.log(this.props.parks, 'info')
 		
 
@@ -30,7 +29,7 @@ class InfoWindow extends Component {
 
 		return(
 			<div>
-				<button >Set The Game UP!</button>
+				<button>Set The Game UP!</button>
 				
 			</div>
 			)
