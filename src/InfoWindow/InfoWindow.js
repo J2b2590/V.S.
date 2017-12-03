@@ -21,12 +21,8 @@ class InfoWindow extends Component {
 
 	render(){
 		
-		const infoPark = this.props.parks.map((park, i)=>{
-		 
 
-		console.log(i)
-		
-	});
+		console.log(this.props.parks, 'info')
 		
 
 		
@@ -34,7 +30,7 @@ class InfoWindow extends Component {
 
 		return(
 			<div>
-				<button onClick={this.window}>Set The Game UP!</button>
+				<button >Set The Game UP!</button>
 				
 			</div>
 			)

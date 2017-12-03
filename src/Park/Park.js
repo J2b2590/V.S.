@@ -17,7 +17,7 @@ class Park extends Component{
 
 
 	componentDidMount(){
-		console.log(this);
+		// console.log(this);
 		GoogleMapsLoader.load((google)=>{
 			const mapCanvas = this.refs.Map;
 
@@ -36,6 +36,7 @@ class Park extends Component{
 					const image = { 
 						url: './images/Tennis.png',
 							}
+
 					const parkPlay = this.props.parks.map((park, i)=>{
 						// console.log(park.facility_n, 'data')
 						if(park.facility_n === "TENNIS COURT"){
@@ -55,12 +56,13 @@ class Park extends Component{
 								map: map,
 								animation: google.maps.Animation.DROP,
 								icon: image,
-								 
+							 
 
 							})
-							const allInfo = this.props.parks
+							// console.log(park.park)	
+							// const allInfo = this.props.parks
 							const infoWindow = new google.maps.InfoWindow({
-								content: "<div id='map-form-" + i+ "'>"
+								content: "<p>" + 'Location:' + park.park + '</br>'+ "</br>" + 'This court is:' + park.facility_t + "</p>" + "<div id='map-form-" + i+ "'>" 
 							})
 							marker.addListener('click', ()=>{
 
@@ -75,6 +77,7 @@ class Park extends Component{
    
   someFunc =(i, park) => {
     console.log(park)
+
     ReactDOM.render(<InfoWindow parks={this.props.parks}/>, document.getElementById('map-form-' + i))
 
 
@@ -98,7 +101,7 @@ class Park extends Component{
 				<div id="map-canvas" ref="Map" className="App">
 
 				</div>
-				
+				<InfoWindow parks={this.props.parks}/>
 			</div>
 			)
 	}
