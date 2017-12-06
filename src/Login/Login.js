@@ -12,6 +12,7 @@ class Login extends Component {
 	render(){
 		return(
 			
+			
 				<input type='text' onKeyPress={this.login}/>
 			
 			)

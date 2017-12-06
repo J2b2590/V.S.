@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import './Park.css';
-import InfoWindow from '../InfoWindow/InfoWindow.js';
+import Form from '../Form/Form.js';
 import ReactDOM from 'react-dom';
+import Modal from 'react-modal';
 import GoogleMapsLoader from 'google-maps';
 
 GoogleMapsLoader.KEY = "AIzaSyBjfQXkFa45WKSDS8lwZbWg2--2Zh2oNVU"
@@ -68,16 +69,17 @@ class Park extends Component{
 							const infoWindow = new google.maps.InfoWindow({
 								content: '<div id="iw-container">' +
                     			'<div class="iw-title">'+ park.park +'</div>' +
+                    			'</div>' +
                     			'<div class="iw-content">' +
-                      			'<div class="iw-subTitle">BLAHALA</div>' +
-                      		'<img src="http://www.atpworldtour.com/-/media/images/news/2017/04/01/00/56/federer-miami-2017-friday-sf-2.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
-                      				 +
-                      			'<div class="iw-subTitle">Contacts</div>' +
+                      			'<div class="iw-subTitle">BLAA</div>' +
+                      		'<img src="http://e2.365dm.com/17/06/1-1/40/skysports-tennis-the-panel-pundits_3987123.png?20170626150139" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
+                      				 
+                      			'<div class="iw-subTitle"></div>' +
                      			'<p>Jeff<br><br>'+
-                     			'<br>Phone. +867-5309<br>e-mail: @gmail<br>WWW.VS.Com</p>'+
+                     			'<br>Phone. +867-5309<br>e-mail: hjgghjgh@gmail<br>WWW.VS.Com</p>'+
                    				'</div>' +
                    				'<div class="iw-bottom-gradient"></div>' +
-                  				'</div>' + "<div id='map-form-" + i+ "'>"
+                  				 "<div id='map-form-" + i+ "'>" 
 							})
 							
 
@@ -109,7 +111,7 @@ class Park extends Component{
     console.log(park)
 
 
-    ReactDOM.render(<InfoWindow parks={this.props.parks}/>, document.getElementById('map-form-' + i))
+    ReactDOM.render(<Form Park={park}/>, document.getElementById('map-form-' + i))
 
 
 
@@ -125,14 +127,19 @@ class Park extends Component{
 
 	render(){
 
-		
+		const users = this.props.users.map((user, i)=>{
+			<div key={i}>user.name</div>
+		})
 
 		return(
 			<div>
 				<div id="map-canvas" ref="Map" className="App">
 
 				</div>
-				<InfoWindow parks={this.props.parks}/>
+
+				{users}
+
+				
 			</div>
 			)
 	}

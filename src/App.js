@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import Login from './Login/Login.js';
 import Park from './Park/Park.js';
-import InfoWindow from './InfoWindow/InfoWindow.js';
+import Form from './Form/Form.js';
+
 
 class App extends Component {
 
@@ -13,7 +14,8 @@ class App extends Component {
         username: '',
         isLoggedIn: false,
         parks: [],
-        modal: false
+        modal: false,
+        users: []
       }
     }
 
@@ -31,11 +33,13 @@ class App extends Component {
 
       })
     }
-    
-     modal = (e) =>{
+
+   
+    grabUsers = (users) => {
       const state = this.state;
-      state.modal = true;
+      state.users = users;
       this.setState(state);
+      console.log(this.state.users)
     }
 
 
@@ -52,8 +56,9 @@ class App extends Component {
   render() {
     return (
   <div>
-      {this.state.isLoggedIn ? <Park parks={this.state.parks}/>  : <Login login={this.login}/>}
       
+      {this.state.isLoggedIn ? <Park parks={this.state.parks} users={this.state.users} grabUsers={this.grabUsers}/>  : <Login login={this.login}/>}
+     
   </div>
     );
   }
