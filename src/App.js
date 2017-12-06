@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+// import './App.css';
 import Login from './Login/Login.js';
 import Park from './Park/Park.js';
 import Form from './Form/Form.js';
@@ -39,7 +39,7 @@ class App extends Component {
       const state = this.state;
       state.users = users;
       this.setState(state);
-      console.log(this.state.users)
+      console.log(this.state.users, 'users')
     }
 
 

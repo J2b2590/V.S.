@@ -127,9 +127,7 @@ class Park extends Component{
 
 	render(){
 
-		const users = this.props.users.map((user, i)=>{
-			<div key={i}>user.name</div>
-		})
+		
 
 		return(
 			<div>
@@ -137,7 +135,7 @@ class Park extends Component{
 
 				</div>
 
-				{users}
+				
 
 				
 			</div>

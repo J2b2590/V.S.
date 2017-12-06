@@ -11,10 +11,10 @@ class Login extends Component {
 
 	render(){
 		return(
-			
+			<div className="App ">
 			
 				<input type='text' onKeyPress={this.login}/>
-			
+			</div>
 			)
 	}
 }

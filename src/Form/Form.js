@@ -24,18 +24,7 @@ class Form extends Component{
     	this.closeModal = this.closeModal.bind(this);
 	}
 
-	 // componentDidMount(){
-
-  //   fetch('http://localhost:3001/users')
-  //       .then(response => response.json())
-  //       .then(data =>{
-  //        console.log(data)
-  //        const state = this.state
-  //        state.data = data;
-  //        this.setState(state)
-  //       })
-  //       console.log(this.state.data)
-  // }
+	
 
 
 
@@ -94,31 +83,24 @@ class Form extends Component{
 
 
 	}
-	 // updateDb = () =>{
-
-  //   fetch('http://localhost:3001/users')
-  //       .then(response => response.json())
-  //       .then(data =>{
-  //        console.log(data)
-  //        const state = this.state
-  //        state.data = data;
-  //        this.setState(state)
-  //       })
-  // }
- 
+	
 	 addToList = (name) =>{
 	    const state = this.state;
 	    state.users.push(name)
 	    this.setState(state)
+
 	    console.log(name,'name')
 	    console.log(this.state.users,'users')
-	    this.props.grabUsers(this.state.users);
+	    // this.props.grabUsers(this.state.users);
 	  }
 
-	
+
 
 
 	render(){ 
+		// const users = this.props.users.map((user, i)=>{
+		// 	<div key={i}>user.name</div>
+		// })
 
 
 
@@ -131,12 +113,30 @@ class Form extends Component{
 			
 			<Modal 
 				isOpen={this.state.modalIsOpen}
+				ariaHideApp={false}
 
 				style={{
 					
+					overlay: {
+
+						postion: 'fixed',
+						top    : 0,
+						left   : 0,
+						right  : 0,
+						bottom : 0,
+						backgroundColor: 'rgba(255,255,255,0.75)'
+
+					},
 					content: {
-						backgroundColor: 'lightgreen',
-						color: 'lightsteelblue'
+						
+						postion: 'absolute',
+						top : '150px',
+						bottom: '330px',
+						left: '150px',
+						right: '150px',
+						border: '5px solid #ccc',
+						background: '#ffff',
+						borderRadius: '10px'
 					}
 
 				}}
@@ -145,17 +145,20 @@ class Form extends Component{
 				
           		
          		 
-				<form>
-				<h1>Set Your Game Up at {this.props.Park.park}</h1>
+				<form className="ReactModal_Content">
+				<h1 className="title">Set Your Game Up at {this.props.Park.park}</h1>
 
-				<input name="name" type="text"        placeholder="Your Name" onChange={this.handleForm} value={this.state.name}/>
-				<input name="age" type="text"         placeholder="Your Age" onChange={this.handleForm} value={this.state.age}/>
-				<input name="phoneNumber" type="text" placeholder="Your phoneNumber" onChange={this.handleForm} value={this.state.phoneNumber}/>
-				<textarea name="comment" type='text'  placeholder="Leave comments about your up coming game" onChange={this.handleForm} value={this.state.comment}/>
-				<button onClick={this.handleSubmit}>Make Game</button>
+				<input className="one" name="name" type="text"        placeholder="Your Name" onChange={this.handleForm} value={this.state.name}/>
+				<input className="one" name="age" type="text"         placeholder="Your Age" onChange={this.handleForm} value={this.state.age}/>
+				<input className="one" name="phoneNumber" type="text" placeholder="Your phoneNumber" onChange={this.handleForm} value={this.state.phoneNumber}/>
+				
+				<textarea className="one two" name="comment" type='text'  placeholder="Leave comments about your up coming game" onChange={this.handleForm} value={this.state.comment}/>
 				</form>
+				<div className="modBut">
+				<button onClick={this.handleSubmit}>Make Game</button>
+				
 				<button onClick={this.closeModal}>close</button>
-
+				</div>
 				</Modal>
 			</div>
 			
