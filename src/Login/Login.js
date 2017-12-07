@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import './Login.css';
 
 class Login extends Component {
 
@@ -11,10 +11,31 @@ class Login extends Component {
 
 	render(){
 		return(
-			<div className="App ">
-			
-				<input type='text' onKeyPress={this.login}/>
+
+		<div className="loginBox">
+
+			<div>
+				<img src="./images/LoginTennis.png" className="Tennis-logo" />
 			</div>
+
+
+			<div>
+				<img src="./images/court.png"  className="court" />
+			</div>
+		
+			
+
+			<div>
+				<h2>Username Login</h2>
+				<input  className="userNameBox"  type='text' onKeyPress={this.login}/>
+			</div>
+
+			<div>
+				<img className="grass" src="./images/grass.png"/>
+			</div>
+			
+
+		</div>
 			)
 	}
 }

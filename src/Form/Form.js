@@ -146,7 +146,7 @@ class Form extends Component{
           		
          		 
 				<form className="ReactModal_Content">
-				<h1 className="title">Set Your Game Up at {this.props.Park.park}</h1>
+				<h1 className="title">Set Your Game Up at {this.props.Park.park} Tennis court</h1>
 
 				<input className="one" name="name" type="text"        placeholder="Your Name" onChange={this.handleForm} value={this.state.name}/>
 				<input className="one" name="age" type="text"         placeholder="Your Age" onChange={this.handleForm} value={this.state.age}/>
