@@ -71,7 +71,7 @@ class Form extends Component{
 		//ajax call
 		const body = JSON.stringify({ name: this.state.name, age: this.state.age, phoneNumber: this.state.phoneNumber, comment: this.state.comment });
 		console.log(body)
-		fetch('http://localhost:3001/user',{
+		fetch('https://calm-fortress-69673.herokuapp.com/',{
 			headers: {'Content-Type': 'application/json'},
 			method: 'POST',
 			body: body
