@@ -7,7 +7,7 @@
 }
 
 .court{
-	margin-top: -50px;
+	margin-top: -30px;
 	z-index: -1000;
 }
 
@@ -26,9 +26,10 @@
 
 	width: 100%;
 	height: 260px;
-	
-    top: 0;
-    left: 0;
+	top: 0;
+  left: 0;
+  position: sticky;
+
 
 
 }

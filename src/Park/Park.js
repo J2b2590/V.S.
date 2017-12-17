@@ -41,6 +41,7 @@ class Park extends Component{
 
 					
 
+
 					const parkPlay = this.props.parks.map((park, i)=>{
 						// console.log(park.facility_n, 'data')
 						if(park.facility_n === "TENNIS COURT"){
@@ -75,7 +76,7 @@ class Park extends Component{
                       		'<img src="http://e2.365dm.com/17/06/1-1/40/skysports-tennis-the-panel-pundits_3987123.png?20170626150139" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
                       				 
                       			'<div class="iw-subTitle"></div>' +
-                     			'<p>Jeff<br><br>'+
+                     			'<p>User who is hosting name<br><br>'+
                      			'<br>Phone. +867-5309<br>e-mail: hjgghjgh@gmail<br>WWW.VS.Com</p>'+
                    				'</div>' +
                    				'<div class="iw-bottom-gradient"></div>' +
@@ -126,18 +127,25 @@ class Park extends Component{
 
 
 	render(){
+		const users = this.props.users.map((user, i)=>{
+					<div key={i}>users.name</div>
+		})
 
+		
 		
 
 		return(
 			<div>
+				
+
 				<div id="map-canvas" ref="Map" className="App">
 
+				
 				</div>
 
-				
 
-				
+
+
 			</div>
 			)
 	}
