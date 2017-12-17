@@ -142,6 +142,9 @@ class Park extends Component{
 
 				
 				</div>
+				<div>
+				<h1>BOX</h1>
+				</div>
 
 
 
