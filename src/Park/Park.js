@@ -141,10 +141,6 @@ class Park extends Component{
 				<div id="map-canvas" ref="Map" className="App">
 
 				
-				</div>
-				<div>
-				<h1>BOX</h1>
-				</div>
 
 
 

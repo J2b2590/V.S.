@@ -98,9 +98,7 @@ class Form extends Component{
 
 
 	render(){ 
-		// const users = this.props.users.map((user, i)=>{
-		// 	<div key={i}>user.name</div>
-		// })
+		
 
 
 
@@ -108,59 +106,59 @@ class Form extends Component{
 		//pass props of location into modal to determine where you are at
 		return(
 			<div className="Mod">
-			<button onClick={this.openModal}>Set The Game Up!!!!</button>
+				<button onClick={this.openModal}>Set The Game Up!!!!</button>
 			<div >
 			
-			<Modal 
-				isOpen={this.state.modalIsOpen}
-				ariaHideApp={false}
+					<Modal 
+						isOpen={this.state.modalIsOpen}
+						ariaHideApp={false}
 
-				style={{
-					
-					overlay: {
+						style={{
+							
+							overlay: {
 
-						postion: 'fixed',
-						top    : 0,
-						left   : 0,
-						right  : 0,
-						bottom : 0,
-						backgroundColor: 'rgba(255,255,255,0.75)'
+								postion: 'fixed',
+								top    : 0,
+								left   : 0,
+								right  : 0,
+								bottom : 0,
+								backgroundColor: 'rgba(255,255,255,0.75)'
 
-					},
-					content: {
+							},
+							content: {
+								
+								postion: 'absolute',
+								top : '150px',
+								bottom: '330px',
+								left: '150px',
+								right: '150px',
+								border: '5px solid #ccc',
+								background: '#ffff',
+								borderRadius: '10px'
+							}
+
+						}}
+
+						>
 						
-						postion: 'absolute',
-						top : '150px',
-						bottom: '330px',
-						left: '150px',
-						right: '150px',
-						border: '5px solid #ccc',
-						background: '#ffff',
-						borderRadius: '10px'
-					}
+		          		
+		         		 
+						<form className="ReactModal_Content">
+							<h1 className="title">Set Your Game Up at {this.props.Park.park} Tennis court</h1>
 
-				}}
-
-				>
-				
-          		
-         		 
-				<form className="ReactModal_Content">
-				<h1 className="title">Set Your Game Up at {this.props.Park.park} Tennis court</h1>
-
-				<input className="one" name="name" type="text"        placeholder="Your Name" onChange={this.handleForm} value={this.state.name}/>
-				<input className="one" name="age" type="text"         placeholder="Your Age" onChange={this.handleForm} value={this.state.age}/>
-				<input className="one" name="phoneNumber" type="text" placeholder="Your phoneNumber" onChange={this.handleForm} value={this.state.phoneNumber}/>
-				
-				<textarea className="one two" name="comment" type='text'  placeholder="Leave comments about your up coming game" onChange={this.handleForm} value={this.state.comment}/>
-				</form>
-				<div className="modBut">
-				<button onClick={this.handleSubmit}>Make Game</button>
-				
-				<button onClick={this.closeModal}>close</button>
+							<input className="one" name="name" type="text"        placeholder="Your Name" onChange={this.handleForm} value={this.state.name}/>
+							<input className="one" name="age" type="text"         placeholder="Your Age" onChange={this.handleForm} value={this.state.age}/>
+							<input className="one" name="phoneNumber" type="text" placeholder="Your phoneNumber" onChange={this.handleForm} value={this.state.phoneNumber}/>
+							
+							<textarea className="one two" name="comment" type='text'  placeholder="Leave comments about your up coming game" onChange={this.handleForm} value={this.state.comment}/>
+						</form>
+					<div className="modBut">
+							<button onClick={this.handleSubmit}>Make Game</button>
+							
+							<button onClick={this.closeModal}>close</button>
+					</div>
+						</Modal>
 				</div>
-				</Modal>
-			</div>
 			
 
 			</div>
