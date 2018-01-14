@@ -153,9 +153,9 @@ class Form extends Component{
 							<textarea className="one two" name="comment" type='text'  placeholder="Leave comments about your up coming game" onChange={this.handleForm} value={this.state.comment}/>
 						</form>
 					<div className="modBut">
-							<button onClick={this.handleSubmit}>Make Game</button>
+							<button onClick={this.handleSubmit} onClick={this.closeModal}>Make Game</button>
 							
-							<button onClick={this.closeModal}>close</button>
+							
 					</div>
 						</Modal>
 				</div>

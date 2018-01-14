@@ -40,7 +40,7 @@ class App extends Component {
       const state = this.state;
       state.users = users;
       this.setState(state);
-      console.log(this.state.users, 'users')
+      console.log(this.state.users, 'all the users hosting')
     }
 
 
