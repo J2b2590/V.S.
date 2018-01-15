@@ -139,7 +139,7 @@ class Park extends Component{
 		return(
 			<div>
 			
-				
+				{users.name}
 
 				<div id="map-canvas" ref="Map" className="App">
 				</div>
